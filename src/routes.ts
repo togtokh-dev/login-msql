@@ -7,7 +7,7 @@ const routers = Router();
 //
 router.use("/v1", apiRouter);
 //
-routers.use("/main/wallet", router);
+routers.use("/main", router);
 routers.get("/healthcheck", (req: Request, res: Response) => {
   res.status(200).send("OK");
 });

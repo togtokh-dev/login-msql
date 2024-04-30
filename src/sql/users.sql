@@ -1,14 +1,9 @@
 CREATE TABLE `user` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `wallet_id` varchar(500) NOT NULL,
-  `wallet_status` tinyint(1) NOT NULL DEFAULT '1',
-  `wallet_type` varchar(500) NOT NULL DEFAULT 'USER',
-  `wallet_key` varchar(500) NOT NULL,
-  `wallet_created_date` datetime NOT NULL,
-  `wallet_name` varchar(255) DEFAULT NULL,
-  `wallet_balance` decimal(12,2) NOT NULL DEFAULT '0.00',
-  `wallet_balance_nande` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` VARCHAR(45) NOT NULL,
+  `user_name` VARCHAR(255) NOT NULL,
+  `user_email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(1000) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY ` id_UNIQUE` (`id`),
-  UNIQUE KEY `wallet_id_UNIQUE` (`wallet_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+  UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC) VISIBLE,
+  UNIQUE INDEX `user_email_UNIQUE` (`user_email` ASC) VISIBLE);

@@ -9,7 +9,7 @@ import path from "path";
 /**
  * Error Handler. Provides full stack
  */
-const ENV_TYPE = process.env.npm_lifecycle_event || process.env.NODE_ENV;
+const ENV_TYPE = process.env.NODE_ENV || process.env.npm_lifecycle_event;
 if (ENV_TYPE === "development") {
   app.use(errorHandler());
 }

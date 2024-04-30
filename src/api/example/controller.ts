@@ -36,7 +36,7 @@ export const verify_token = async (req: Request, res: Response) => {
   try {
     return res.status(200).json({
       success: true,
-      message: "Wallet created",
+      message: "verify_token",
       data: null,
     });
   } catch (error) {

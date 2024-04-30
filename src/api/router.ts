@@ -1,10 +1,8 @@
 import { Router } from "express";
 import authMaster from "auth-master";
 const router = Router();
-import { create, login, verify_token } from "./controller";
+import authRouter from "./auth/router";
 
-router.post("/create", create);
-router.get("/login", login);
-router.post("/verify_token", verify_token);
+router.use("/auth", authRouter);
 
 export default router;

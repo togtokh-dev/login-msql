@@ -20,7 +20,14 @@ if (process.env.NEWRELIC == "true") {
   import("newrelic");
 }
 console.log(ENV_TYPE);
-
+console.log({
+  user: SQL.DB_USER,
+  database: SQL.DB_DATABASE,
+  password: SQL.DB_PASSWORD,
+  port: Number(SQL.DB_PORT),
+  host: SQL.DB_HOST,
+  dateStrings: true,
+});
 export const connection = mysql.createConnection({
   user: SQL.DB_USER,
   database: SQL.DB_DATABASE,
